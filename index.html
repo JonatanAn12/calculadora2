@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #fefefe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .calculadora {
+            background-color: #333;
+            border-radius: 30px;
+            max-width: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            padding: 22px;
+        }
+
+        .display {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: gray solid 5px;
+            text-align: right;
+        }
+
+        .pantalla {
+            font-size: 1.5em;
+            min-height: 30px;
+            text-align: right;
+            color: rgb(86, 83, 83);
+        }
+
+        .historial {
+            font-size: 0.8em;
+            color: #888;
+            min-height: 60px;
+            text-align: right;
+            border-bottom: 2px solid #888;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn-custom {
+            background-color: #636565;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #a82880;
+            color: #47474e;
+            transform: scale(1.05);
+        }
+
+        #cero {
+            grid-column: span 2;
+        }
+
+        .igual {
+            grid-row: span 2;
+            background-color: #e6394a !important;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .igual:hover {
+            background-color: #a82880 !important;
+            color: #0f0f10;
+            transform: scale(1.05);
+        }
+footer {
+  background-color: #4c4d4d;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: 0.2s;
+  margin: 30px;
+}
+
+footer:hover {
+  transform: scale(1.1);
+}
+
+footer > button {
+  padding: 5px 10px;
+  background-color: #e6394a;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  transition: 0.2s;
+}
+
+footer > button:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+  background-color: #ff0019;
+  color: #0f0f10;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="calculadora">
+        <div class="display">
+            <div class="historial"></div>
+            <div class="pantalla" id="display">0</div>
+        </div>
+        <div class="buttons">
+            <button id="c" class="btn btn-custom" onclick="handleCkey()" value="C">CH</button>
+            <button id="borrar" class="btn btn-custom" value="Backspace">←</button>
+            <button class="btn btn-custom" value="/">/</button>
+            <button class="btn btn-custom" value="*">*</button>
+            <button class="btn btn-custom" value="7">7</button>
+            <button class="btn btn-custom" value="8">8</button>
+            <button class="btn btn-custom" value="9">9</button>
+            <button class="btn btn-custom" value="-">-</button>
+            <button class="btn btn-custom" value="4">4</button>
+            <button class="btn btn-custom" value="5">5</button>
+            <button class="btn btn-custom" value="6">6</button>
+            <button class="btn btn-custom" value="+">+</button>
+            <button class="btn btn-custom" value="1">1</button>
+            <button class="btn btn-custom" value="2">2</button>
+            <button class="btn btn-custom" value="3">3</button>
+            <button class="btn btn-custom igual" value="Enter" onclick="handleEqualKey()">=</button>
+            <button id="cero" class="btn btn-custom" value="0">0</button>
+            <button class="btn btn-custom" value=".">.</button>
+            <button id="Escape" class="btn btn-custom" value="Escape" onclick="handleClearKey()">Limpiar</button>
+        </div>
+    </div>
+    <footer>
+        Presiona la tecla "i" para abrir el menú de atajos!
+        <button id="buttonInfo">Abrir Menú</button>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
