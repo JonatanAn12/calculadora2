@@ -17,7 +17,7 @@ document.addEventListener('keydown', (event) => {
 })
 
 document.addEventListener('keyup', (event) => {
-  changeColor(event, '636565')
+  changeColor(event, '4c4d4d')
 })
 
 //* Función para escribir con teclado
@@ -28,8 +28,9 @@ document.addEventListener("keydown", (event) => {
   } else if (/[\+\-\*\/\.]/.test(key)) {
     handleOperatorKey(key);
   } else if (key === "Enter") {
+    event.preventDefault(); 
     handleEqualKey();
-  } else if (key === "Backspace") {
+  }else if (key === "Backspace") {
     handleBackspaceKey();
   } else if (key === "c") {
     handleCkey();
@@ -109,7 +110,7 @@ botones.forEach(boton => {
       handleNumericKey(valorBoton);
     } else if (valorBoton === "+" || valorBoton === "-" || valorBoton === "*" || valorBoton === "/") {
       handleOperatorKey(valorBoton);
-    } else if (valorBoton === "=") {
+    } else if (key === "Enter") { 
       handleEqualKey();
     } else if (valorBoton === "←") {
       handleBackspaceKey();

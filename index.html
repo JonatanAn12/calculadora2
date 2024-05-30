@@ -4,33 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <style>
-        body {
-            background-color: #fefefe;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-        }
 
-        .calculadora {
-            background-color: #333;
-            border-radius: 30px;
-            max-width: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            padding: 22px;
-        }
 
-        .display {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: gray solid 5px;
-            text-align: right;
-        }
+ 
+
+ 
 
         .pantalla {
             font-size: 1.5em;
@@ -40,11 +21,22 @@
         }
 
         .historial {
+            grid-column: 1 / -1;
             font-size: 0.8em;
             color: #888;
             min-height: 60px;
             text-align: right;
             border-bottom: 2px solid #888;
+        }
+        .btn {
+            color: white;
+            border: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
         .buttons {
@@ -54,10 +46,9 @@
         }
 
         .btn-custom {
-            background-color: #636565;
+            background-color: #4c4d4d;
             border: none;
             border-radius: 5px;
-            color: #fff;
             padding: 20px;
             font-size: 1.2em;
             cursor: pointer;
@@ -65,7 +56,7 @@
         }
 
         .btn-custom:hover {
-            background-color: #a82880;
+            background-color: #a82880 !important;
             color: #47474e;
             transform: scale(1.05);
         }
@@ -77,59 +68,46 @@
         .igual {
             grid-row: span 2;
             background-color: #e6394a !important;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            padding: 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        }
+        footer {
+           background-color: #4c4d4d;
+           color: #ffffff;
+           padding: 10px;
+           border-radius: 10px;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           gap: 5px;
+           transition: 0.2s;
+           margin: 30px;
         }
 
-        .igual:hover {
-            background-color: #a82880 !important;
-            color: #0f0f10;
-            transform: scale(1.05);
+        footer:hover {
+          transform: scale(1.1);
         }
-footer {
-  background-color: #4c4d4d;
-  color: #ffffff;
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  transition: 0.2s;
-  margin: 30px;
-}
 
-footer:hover {
-  transform: scale(1.1);
-}
+        footer > button {
+          padding: 5px 10px;
+          background-color: #e6394a;
+          color: #ffffff;
+          border-radius: 10px;
+          border: none;
+          transition: 0.2s;
+        }
 
-footer > button {
-  padding: 5px 10px;
-  background-color: #e6394a;
-  color: #ffffff;
-  border-radius: 10px;
-  border: none;
-  transition: 0.2s;
-}
-
-footer > button:hover {
-  transform: scale(1.15);
-  cursor: pointer;
-  background-color: #ff0019;
-  color: #0f0f10;
-}
+        footer > button:hover {
+          transform: scale(1.15);
+          cursor: pointer;
+          background-color: #ff0019;
+          color: #0f0f10;
+        }
 
     </style>
 </head>
 
-<body>
-    <div class="calculadora">
-        <div class="display">
+<body class="bg-ligth d-flex justify-content-center align-items-center">
+    <div class="bg-secondary rounded-corners max-width-container box-shadow-large padding-medium" style="padding: 20px;">
+        <div class="bg-light rounded p-2 mb-3 border border-secondary text-right">
             <div class="historial"></div>
             <div class="pantalla" id="display">0</div>
         </div>
@@ -164,3 +142,4 @@ footer > button:hover {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
+
