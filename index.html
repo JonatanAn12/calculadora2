@@ -8,32 +8,20 @@
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <style>
 
-
- 
-
- 
-
-        .pantalla {
-            font-size: 1.5em;
+      
+        .custom-min-height {
             min-height: 30px;
-            text-align: right;
-            color: rgb(86, 83, 83);
         }
-
-        .historial {
-            grid-column: 1 / -1;
-            font-size: 0.8em;
-            color: #888;
+        .min-h-60 {
             min-height: 60px;
-            text-align: right;
+        }
+        .border-bottom-custom {
             border-bottom: 2px solid #888;
         }
+
         .btn {
             color: white;
             border: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             border-radius: 0.5rem;
             cursor: pointer;
             transition: 0.2s;
@@ -46,7 +34,7 @@
         }
 
         .btn-custom {
-            background-color: #4c4d4d;
+            background-color: #4d4c4c;
             border: none;
             border-radius: 5px;
             padding: 20px;
@@ -57,7 +45,7 @@
 
         .btn-custom:hover {
             background-color: #a82880 !important;
-            color: #47474e;
+            color: #f5f5fb;
             transform: scale(1.05);
         }
 
@@ -69,24 +57,24 @@
             grid-row: span 2;
             background-color: #e6394a !important;
         }
-        footer {
-           background-color: #4c4d4d;
-           color: #ffffff;
-           padding: 10px;
-           border-radius: 10px;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           gap: 5px;
-           transition: 0.2s;
-           margin: 30px;
+        .footer-custom {
+            background-color: #4c4d4d;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: 0.2s;
+            margin: 30px;
         }
 
-        footer:hover {
+        .footer-custom:hover {
           transform: scale(1.1);
         }
 
-        footer > button {
+        .footer-custom > button {
           padding: 5px 10px;
           background-color: #e6394a;
           color: #ffffff;
@@ -95,7 +83,7 @@
           transition: 0.2s;
         }
 
-        footer > button:hover {
+        .footer-custom > button:hover {
           transform: scale(1.15);
           cursor: pointer;
           background-color: #ff0019;
@@ -106,34 +94,34 @@
 </head>
 
 <body class="bg-ligth d-flex justify-content-center align-items-center">
-    <div class="bg-secondary rounded-corners max-width-container box-shadow-large padding-medium" style="padding: 20px;">
+    <div class="bg-secondary rounded-corners w-30 p-3 box-shadow-large padding-medium" style="padding: 20px;">
         <div class="bg-light rounded p-2 mb-3 border border-secondary text-right">
-            <div class="historial"></div>
-            <div class="pantalla" id="display">0</div>
+            <div class="historial col-12 fs-6 text-muted min-h-60 text-end border-bottom-custom"></div>
+            <div class="pantalla fs-4 text-end text-secondary custom-min-height" id="display">0</div>
         </div>
         <div class="buttons">
-            <button id="c" class="btn btn-custom" onclick="handleCkey()" value="C">CH</button>
+            <button id="Escape" class="btn btn-custom" value="Escape" onclick="handleClearKey()">Limpiar</button>
             <button id="borrar" class="btn btn-custom" value="Backspace">←</button>
-            <button class="btn btn-custom" value="/">/</button>
-            <button class="btn btn-custom" value="*">*</button>
-            <button class="btn btn-custom" value="7">7</button>
-            <button class="btn btn-custom" value="8">8</button>
-            <button class="btn btn-custom" value="9">9</button>
-            <button class="btn btn-custom" value="-">-</button>
-            <button class="btn btn-custom" value="4">4</button>
-            <button class="btn btn-custom" value="5">5</button>
-            <button class="btn btn-custom" value="6">6</button>
-            <button class="btn btn-custom" value="+">+</button>
-            <button class="btn btn-custom" value="1">1</button>
-            <button class="btn btn-custom" value="2">2</button>
-            <button class="btn btn-custom" value="3">3</button>
-            <button class="btn btn-custom igual" value="Enter" onclick="handleEqualKey()">=</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="/">/</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="*">*</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="7">7</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="8">8</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="9">9</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="-">-</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="4">4</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="5">5</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="6">6</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="+">+</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="1">1</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="2">2</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center" value="3">3</button>
+            <button class="btn btn-custom  d-flex justify-content-center align-items-center igual" value="Enter" onclick="handleEqualKey()">=</button>
             <button id="cero" class="btn btn-custom" value="0">0</button>
             <button class="btn btn-custom" value=".">.</button>
-            <button id="Escape" class="btn btn-custom" value="Escape" onclick="handleClearKey()">Limpiar</button>
+            <button id="c" class="btn btn-custom" onclick="handleCkey()" value="C">CH</button>
         </div>
     </div>
-    <footer>
+    <footer class="footer-custom">
         Presiona la tecla "i" para abrir el menú de atajos!
         <button id="buttonInfo">Abrir Menú</button>
     </footer>

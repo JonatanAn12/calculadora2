@@ -108,9 +108,9 @@ botones.forEach(boton => {
     const valorBoton = boton.textContent;
     if (!isNaN(valorBoton)) {
       handleNumericKey(valorBoton);
-    } else if (valorBoton === "+" || valorBoton === "-" || valorBoton === "*" || valorBoton === "/") {
+    } else if (valorBoton === "+" || valorBoton === "-" || valorBoton === "*" || valorBoton === "/" || valorBoton ===".") {
       handleOperatorKey(valorBoton);
-    } else if (key === "Enter") { 
+    } else if (valorBoton === "Enter") { 
       handleEqualKey();
     } else if (valorBoton === "←") {
       handleBackspaceKey();
